@@ -13,7 +13,7 @@ const (
 	zipf_s = 1.00001 // s ~= 1 is for word distributions
 	zipf_v = 1.0     // v = 1
 
-	wordsPerBook = 100000 // approximate number of words per book; http://wordcounters.com/word-count/literary-books/
+	wordsPerBook = 85000  // approximate number of words per book
 	wordsToLearn = 35000  // words an educated English speaker knows; http://testyourvocab.com/blog/2013-05-08-Native-speakers-in-greater-detail
 	vocabSize    = 171146 // reasonable total English vocabulary size to cap Zipf outliers; https://wordcounter.io/blog/how-many-words-are-in-the-english-language/
 )
