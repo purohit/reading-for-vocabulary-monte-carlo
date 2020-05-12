@@ -1,6 +1,6 @@
 # reading-for-vocabulary-monte-carlo
 
-Code to run Monte Carlo simulations for the linked article.
+Code to run Monte Carlo simulations for my blog post: https://puroh.it/reading-for-a-fine-vocabulary/.
 
 Usage:
 ```go
