@@ -14,15 +14,15 @@ const (
 	zipf_v = 1.0     // v = 1
 
 	wordsPerBook = 85000  // approximate number of words per book
-	wordsToLearn = 35000  // words an educated English speaker knows; http://testyourvocab.com/blog/2013-05-08-Native-speakers-in-greater-detail
 	vocabSize    = 171146 // reasonable total English vocabulary size to cap Zipf outliers; https://wordcounter.io/blog/how-many-words-are-in-the-english-language/
 )
 
 var (
 	// see flags for documentation
-	trials     int // on my 8-core laptop, 1000 trials take ~3 minutes
-	experiment string
-	threshold  uint64
+	trials       int // on my 8-core laptop, 1000 trials take ~3 minutes
+	experiment   string
+	threshold    uint64
+	wordsToLearn uint64 // words an educated English speaker knows; http://testyourvocab.com/blog/2013-05-08-Native-speakers-in-greater-detail
 )
 
 // generates a Zipf distribution for a constant stream of words
@@ -126,6 +126,7 @@ func main() {
 func init() {
 	flag.StringVar(&experiment, "experiment", "simple", "experiment to run (simple or srs)")
 	flag.IntVar(&trials, "trials", 10, "number of trials to run")
+	flag.Uint64Var(&wordsToLearn, "words-to-learn", 35000, "default vocabulary size (words to learn)")
 	flag.Uint64Var(&threshold, "threshold", 12, "number of times to see a word before it's considered learned")
 	flag.Parse()
 }
